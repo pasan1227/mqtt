@@ -4,11 +4,13 @@ var client = mqtt.connect('mqtt://mqtt.fluux.io');
 var topic = 'vha/bed_coordinates';
 var topic1 = 'vha/privacy_timeout';
 var topic2 = 'vha/automatic_detection';
+var topic3 = 'vha/patient_gestures';
 
 client.on('connect', () => {
-  client.subscribe((topic = 'vha/bed_coordinates'));
-  client.subscribe((topic1 = 'vha/privacy_timeout'));
-  client.subscribe((topic2 = 'vha/automatic_detection'));
+  // client.subscribe((topic = 'vha/bed_coordinates'));
+  // client.subscribe((topic1 = 'vha/privacy_timeout'));
+  // client.subscribe((topic2 = 'vha/automatic_detection'));
+  client.subscribe((topic3 = 'vha/patient_gestures'));
 });
 
 client.on('message', (topic, message) => {
